@@ -25,7 +25,7 @@ node {
 			 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${jwt_key_file}\" --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
 			 
             if (rc != 0) { error 'hub org authorization failed' }
-            echo rc    
+               
             // need to pull out assigned username
             rmsg = sh returnStdout: true, script: "\"${toolbelt}\" force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
             printf rmsg

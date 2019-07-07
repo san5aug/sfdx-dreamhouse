@@ -29,14 +29,14 @@ node {
             if (rc != 0) { error 'hub org authorization failed' }
                
             // need to pull out assigned username
-            rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+            /*rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
             echo rmsg
 	    printf rmsg
             def jsonSlurper = new JsonSlurperClassic()
             def robj = jsonSlurper.parseText(rmsg)
             if (robj.status != 0) { error 'org creation failed: ' + robj.message }
-            SFDC_USERNAME=robj.result.username
-		//SFDC_USERNAME = 'test-nhlegkynvqsu@example.com'
+            SFDC_USERNAME=robj.result.username*/
+		SFDC_USERNAME = 'test-a4bickjtd3ye@example.com'
             robj = null
 
         }
